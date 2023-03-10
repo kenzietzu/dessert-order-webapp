@@ -1,0 +1,43 @@
+.cart-items {
+    color: rgb(255, 35, 101);
+    list-style: square;
+    line-height: 3rem;
+}
+
+.total {
+    color: rgb(255, 35, 101);
+    margin: 5rem 0rem 2rem;
+}
+
+button {
+    border: none;
+    background-color: rgb(255, 35, 101);
+    color: aliceblue;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    width: 30rem ;
+    margin: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    color: rgb(255, 35, 101);
+}
+
+.title {
+    margin: 2rem 0rem 5rem;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid rgb(255, 35, 101);
+    height: 1px;
+    width: 230%;
+    transform: translate(-27.5%, 500%);
+
+}

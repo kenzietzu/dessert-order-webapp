@@ -1,0 +1,21 @@
+
+.backdrop {
+    background-color: rgba(255, 255, 255, 0.56);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+}
+
+.modal {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 35rem;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    box-shadow: -3px -3px 10px 3px rgba(35, 35, 35, 0.084);
+}
