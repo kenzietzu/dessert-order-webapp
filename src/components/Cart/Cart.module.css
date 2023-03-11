@@ -41,3 +41,16 @@ button {
     transform: translate(-27.5%, 500%);
 
 }
+
+.delete {
+    cursor: pointer;
+    z-index: 30;
+}
+
+.delete {
+    z-index: 1;
+}
+
+button {
+    cursor: pointer;
+}

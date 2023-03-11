@@ -16,7 +16,7 @@ export const mealList = [
     {
         id: '2',
         image: Donut2,
-        name: 'Milk Choc Kinder D!',
+        name: 'Milk Choc Kinder',
         description: 'A Kinderella filled doughnut topped with milk choc icing and a slice of Kinder Bar!',
         price: 5,
     },
