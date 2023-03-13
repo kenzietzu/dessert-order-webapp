@@ -1,29 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
 
-export const userSlice = createSlice({
+import { createSlice, current } from "@reduxjs/toolkit";
+
+
+const addFunc = (items, product) => {
+    const existingItem = items.find(
+        item => item.name === product.name
+    );
+    if (existingItem) {
+        return items.map(item =>
+            item.name === product.name
+            ? {...item, amount: Number(item.amount) + Number(product.amount)}
+            : item);
+    };
+    //new product  
+    return [...items, {...product, amount: product.amount}];  
+};                       
+
+const deleteFunc = (items, product) => {
+    return items.filter(item => {
+        return item.id !== product.id;
+    });
+}
+
+export const contentsSlice = createSlice({
     name: 'contents',
     initialState: {
         value: [],
     },
     reducers: {
         addItem: (state, action) => {
-            state.value.push(action.payload);
+            state.value = addFunc(state.value, action.payload)
+            // console.log(current(state));
         },
-        // updateItem: (state, action) => {
-        //     state.value.map((item) => {
-        //         if (item.id === action.payload.id) {
-        //             item.content = action.payload.content;
-        //         }
-        //     })
-
-        // },
         deleteItem: (state, action) => {
-            state.value = state.value.filter(item => {
-                return item.id !== action.payload.id;
-            });
+            state.value = deleteFunc(state.value, action.payload);
         },
     },
 });
 
-export const { addItem, countAmount, updateItem, deleteItem } = userSlice.actions; 
-export default userSlice.reducer;
+export const { addItem, countAmount, updateItem, deleteItem } = contentsSlice.actions; 
+export default contentsSlice.reducer;

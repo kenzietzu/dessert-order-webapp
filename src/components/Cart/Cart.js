@@ -9,6 +9,7 @@ import { deleteItem } from '../../features/Contents';
 const Cart = ({modalOffHandler}) => {
     const contentList = useSelector( (state) => state.contents.value);
     const dispatch = useDispatch();
+    console.log(contentList);
     const totalAmount = contentList.reduce((cur, item) => {
         return cur + item.price * item.amount
     }, 0);

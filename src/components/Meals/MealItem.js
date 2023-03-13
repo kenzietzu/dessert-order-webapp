@@ -8,11 +8,11 @@ import classes from './MealItem.module.css';
 
 const MealItem = ({image, name, description, price }) => {
     const amountRef = useRef(null);
-    const dispatch = useDispatch(); 
+    const dispatch = useDispatch();
+    const unique_id = uuid(); 
 
     const addItemHandler = () => {
         if (+amountRef.current.value > 0) {
-            const unique_id = uuid();
             dispatch(addItem({
                 id: unique_id,
                 name: name,
